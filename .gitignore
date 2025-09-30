@@ -12,11 +12,14 @@ target/
 .settings
 .springBeans
 .sts4-cache
+
+### Env files ###
 .env
 .env.*
 *.env
-tdlight-session/db/*.sqlite*
-tdlight-session/db/*.sqlite-*
+
+### Telegram session (TDLight) ###
+tdlight-session/
 
 ### IntelliJ IDEA ###
 .idea
@@ -36,6 +39,3 @@ build/
 
 ### VS Code ###
 .vscode/
-.env
-.env.*
-*.env
