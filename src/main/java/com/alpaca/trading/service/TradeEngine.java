@@ -35,13 +35,13 @@ public class TradeEngine {
     public void simulateTriggerAndExecute(TradeSignal s) {
         int qty = computeQty(s.trigger);
         double limitPrice = s.trigger * 1.005; // Initial slippage 0.5% (adjustable)
-        String orderId = alpaca.submitBuyLimit(s.symbol, qty, limitPrice, extendedHours);
+       // String orderId = alpaca.submitBuyLimit(s.symbol, qty, limitPrice, extendedHours);
         s.status = SignalStatus.SUBMITTED;
 
         // After the Fill (later we hear it from the WebSocket), now we calculate the TP from the actual execution price.
         // Initially we calculate it from the trigger of the experiment:
         double tp = s.trigger * (1.0 + tpPct / 100.0);
-        alpaca.placeExitOco(s.symbol, qty, tp, s.stopLoss);
+        // alpaca.placeExitOco(s.symbol, qty, tp, s.stopLoss);
     }
 
 }
